@@ -3,7 +3,7 @@ from datetime import date
 
 from lib.constants import Constants
 from lib.helpers.testrail.testrailhelpers import TestrailHelper
-from lib.integrations.testrail import APIClient
+from lib.helpers.testrail import APIClient
 
 logger = logging.getLogger(__name__)
 

@@ -2,8 +2,8 @@ import re
 import logging
 
 from lib.constants import Constants
-from lib.integrations.slack import send_not_created_tc
-from lib.integrations.testrail import APIClient, APIError
+#from lib.integrations.slack import send_not_created_tc
+from lib.helpers.testrail import APIClient, APIError
 
 logger = logging.getLogger()
 
