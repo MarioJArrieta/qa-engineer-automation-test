@@ -1,5 +1,4 @@
 @regression_tests
-
 Feature: Validate element created dropdown column
 
   Scenario: Navigate to the Kayak home page and validate principal elements
@@ -18,11 +17,11 @@ Feature: Validate element created dropdown column
     Then I should be in the "home" page
     And The url page should be equal to the next "https://www.kayak.com/" url
 
-    Scenario Outline: Navigate between countries and validate the URL
-      Given I navigate to the kayak main page
-      Then I should be in the "home" page
-      When I navigate to the "<url>" URL
-      Then The url page should be equal to the next "<url>" url
+  Scenario Outline: Navigate between countries and validate the URL
+    Given I navigate to the kayak main page
+    Then I should be in the "home" page
+    When I navigate to the "<url>" URL
+    Then The url page should be equal to the next "<url>" url
 
     Examples:
       | url                       |
