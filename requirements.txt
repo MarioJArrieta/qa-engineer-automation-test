@@ -1,5 +1,0 @@
-behave==1.2.6
-selenium==4.10.0
-PyHamcrest>=2.0.2
-webdriver-manager==4.0.0
-chromedriver_autoinstaller==0.6.4
