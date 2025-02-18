@@ -1,2 +1,6 @@
-# Ignore all .pyc files
+*.log
+*.pot
 *.pyc
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
