@@ -1,8 +1,6 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from lib.pages.basepage import BasePage
 from lib.pages.homepage import HomePage
-from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
 import sys
 sys.path.insert(0,'/usr/lib/chromium-browser/chromedriver')
