@@ -2,11 +2,14 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from lib.pages.basepage import BasePage
 from lib.pages.homepage import HomePage
-
+from selenium.webdriver.chrome.service import Service
+import chromedriver_autoinstaller
+import sys
+sys.path.insert(0,'/usr/lib/chromium-browser/chromedriver')
 
 def before_all(context):
     driver = set_selenium_driver(context)
-    driver.set_page_load_timeout('0.5')
+    driver.set_page_load_timeout('5')
     driver.maximize_window()
 
     context.web_driver = driver
@@ -32,7 +35,7 @@ def after_scenario(context, scenario):
 
 def after_all(context):
     context.browser.quit()
-    return print("===== That's all folks =====")
+    print("===== That's all folks =====")
 
 
 def after_step(context, step):
@@ -63,7 +66,9 @@ def set_local_driver() -> webdriver:
     chrome_options.add_argument("--lang=en-US")
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     chrome_options.add_experimental_option('useAutomationExtension', False)
-    return webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    chromedriver_autoinstaller.install()
+    driver = webdriver.Chrome(options=chrome_options)
+    return driver
 
 
 def set_docker_driver() -> webdriver:
@@ -80,4 +85,5 @@ def set_docker_driver() -> webdriver:
     )
 
 def test_rail_report(context):
-    return context.config.userdata["testrail"]
+    if context.config.userdata["testrail"]:
+        return context.config.userdata["testrail"]
